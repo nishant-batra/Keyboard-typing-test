@@ -1,0 +1,47 @@
+textarea {
+  resize: none;
+  width: 100%;
+  margin: 0px 0 30px;
+  background-color: transparent;
+  font-size: 16px;
+  position: relative;
+  color: white;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  overflow: none;
+}
+
+.sample-text {
+  position: absolute;
+  top: 0;
+  padding: 3px 3px;
+  margin-top: 35px;
+  color: #767676;
+  width: 100%;
+  font-size: 20px;
+}
+
+.text-area {
+  position: relative;
+  width: 100%;
+}
+
+.red {
+  color: #8a0101;
+  background-color: #ff2e2e;
+}
+.green {
+  color: green;
+  background-color: #99fa23;
+}
+
+.finished-text {
+  margin-bottom: 30px;
+  text-align: center;
+}
+p,
+h4 {
+  margin: 0;
+  display: inline-block;
+}
