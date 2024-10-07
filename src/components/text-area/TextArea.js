@@ -2,7 +2,15 @@ import React, { useState, useEffect, useRef } from "react";
 import "./textArea.css";
 import Stats from "../stats/Stats";
 import Timer from "../Timer/Timer";
-function TextArea({ start, time, text }) {
+const compareAttempts = (a, b) => {
+  if (a.accuracy * a.wpm > b.accuracy * b.wpm) {
+    return -1;
+  } else if (a.accuracy * a.wpm === b.accuracy * b.wpm) {
+    return 0;
+  } else return 1;
+};
+
+function TextArea({ start, time, text, prevAttempts, setPrevAttempts }) {
   const sampleText = text;
   const [inputText, setInputText] = useState("");
   const [timer, setTimer] = useState(time * 1000);
@@ -13,7 +21,6 @@ function TextArea({ start, time, text }) {
     let count = 0;
     for (let i in inputText) {
       if (inputText[i] === sampleText[i]) {
-        console.log(inputText);
         count++;
       }
     }
@@ -22,6 +29,28 @@ function TextArea({ start, time, text }) {
   const [timerState, setTimerState] = useState("reset");
   const timeoutId = useRef(null);
   const textRef = useRef(null);
+  const test = () => {
+    let attempts = [
+      ...prevAttempts,
+      {
+        date: new Date().toLocaleDateString(undefined, {
+          year: "numeric",
+          month: "2-digit",
+          day: "numeric",
+        }),
+        wpm: parseInt(
+          (inputText.split(" ").length * 60) /
+            ((time * 1000 - timer) / 1000).toFixed(0)
+        ),
+        accuracy: parseInt(
+          ((calculateCorrectChars() / inputText.length) * 100).toFixed(2)
+        ),
+      },
+    ];
+    attempts = attempts.sort(compareAttempts);
+    setPrevAttempts(attempts.slice(0, 5));
+    console.log(attempts);
+  };
   useEffect(() => {
     if (start) {
       setTimerState("start");
@@ -48,6 +77,7 @@ function TextArea({ start, time, text }) {
 
   useEffect(() => {
     if (timerState === "start") textRef.current.focus();
+    else if (timerState === "end") test();
   }, [timerState]);
   useEffect(() => {
     window.addEventListener("resize", adjustHeight);

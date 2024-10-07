@@ -68,3 +68,15 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+Problems with app
+
+handle backspace - done
+
+handle mobile view - done
+handle calculation of words - done
+add a text refresh button - done
+results modal - done
+save previous stats
+show personal best by comparing with previous stats
+have a modal for previous stats

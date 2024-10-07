@@ -39,6 +39,9 @@ p {
   left: calc(100% - 40px);
   z-index: 1;
 }
+.icon-1 {
+  margin-left: -40px;
+}
 
 .length-selection {
   display: flex;

@@ -1,0 +1,36 @@
+.list-item {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.list {
+  background-color: white;
+  width: 500px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  align-items: center;
+}
+h2 {
+  text-align: center;
+}
+.bg-gray {
+  background-color: lightgray;
+}
+
+.subheading {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+button {
+  margin-bottom: 20px;
+}
+
+.data-empty {
+  font-family: "Jacquard 12", system-ui;
+  opacity: 0.5;
+}
