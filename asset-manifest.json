@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/Keyboard-typing-test/static/css/main.733c91c9.css",
+    "main.css": "/Keyboard-typing-test/static/css/main.01c808f4.css",
     "main.js": "/Keyboard-typing-test/static/js/main.1fe59022.js",
     "index.html": "/Keyboard-typing-test/index.html",
-    "main.733c91c9.css.map": "/Keyboard-typing-test/static/css/main.733c91c9.css.map",
+    "main.01c808f4.css.map": "/Keyboard-typing-test/static/css/main.01c808f4.css.map",
     "main.1fe59022.js.map": "/Keyboard-typing-test/static/js/main.1fe59022.js.map"
   },
   "entrypoints": [
-    "static/css/main.733c91c9.css",
+    "static/css/main.01c808f4.css",
     "static/js/main.1fe59022.js"
   ]
 }
