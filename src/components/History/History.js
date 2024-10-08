@@ -14,7 +14,7 @@ function History({ data, setShowHistory }) {
                   return (
                     <div
                       className={
-                        index % 2 == 1 ? "list-item" : "list-item bg-gray"
+                        index % 2 === 1 ? "list-item" : "list-item bg-gray"
                       }
                     >
                       <p>{index + 1}</p>

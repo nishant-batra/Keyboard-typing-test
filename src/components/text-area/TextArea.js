@@ -29,7 +29,7 @@ function TextArea({ start, time, text, prevAttempts, setPrevAttempts }) {
   const [timerState, setTimerState] = useState("reset");
   const timeoutId = useRef(null);
   const textRef = useRef(null);
-  const test = () => {
+  const updateAttempts = () => {
     let attempts = [
       ...prevAttempts,
       {
@@ -49,7 +49,6 @@ function TextArea({ start, time, text, prevAttempts, setPrevAttempts }) {
     ];
     attempts = attempts.sort(compareAttempts);
     setPrevAttempts(attempts.slice(0, 5));
-    console.log(attempts);
   };
   useEffect(() => {
     if (start) {
@@ -77,7 +76,7 @@ function TextArea({ start, time, text, prevAttempts, setPrevAttempts }) {
 
   useEffect(() => {
     if (timerState === "start") textRef.current.focus();
-    else if (timerState === "end") test();
+    else if (timerState === "end") updateAttempts();
   }, [timerState]);
   useEffect(() => {
     window.addEventListener("resize", adjustHeight);
@@ -135,6 +134,8 @@ function TextArea({ start, time, text, prevAttempts, setPrevAttempts }) {
           time={((time * 1000 - timer) / 1000).toFixed(0)}
           setShowModal={setShowModal}
           inputText={inputText}
+          sampleText={sampleText}
+          previousAttempt={prevAttempts ? prevAttempts[0] : null}
         />
       )}
     </div>

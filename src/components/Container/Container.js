@@ -10,9 +10,11 @@ function Container() {
   const [sampleText, setSampleText] = useState("sample text");
   const [showHistory, setShowHistory] = useState(false);
   const [prevAttempts, setPreviousAttemps] = useState([]);
+  const getNewSampleText = () => {
+    setSampleText(calcSampleText());
+  };
   useEffect(() => {
     const storedData = localStorage.getItem("10TypingTestResults");
-    console.log(storedData);
     if (storedData && storedData.length) {
       setPreviousAttemps(JSON.parse(storedData));
     }
@@ -24,9 +26,7 @@ function Container() {
   useEffect(() => {
     if (start === false) getNewSampleText();
   }, [time, start]);
-  const getNewSampleText = () => {
-    setSampleText(calcSampleText());
-  };
+
   const calcSampleText = () => {
     let words = timeIntervals[time];
     let sampleText = "";
