@@ -1,10 +1,32 @@
-Hi this is my keyboard type testing app - hope you like it :)
+# Keyboard Typing Test
 
-handle backspace - done
-handle mobile view - done
-handle calculation of words - done
-add a text refresh button - done
-results modal - done
-save previous stats -done
-show personal best by comparing with previous stats -done
-have a modal for previous stats- done
+A typing speed test app — hope you like it :)
+
+## Features
+
+- Words-per-minute calculation
+- Backspace handling
+- Mobile-friendly layout
+- Text refresh button for a new passage
+- Results modal, with personal-best tracking across sessions (saved stats)
+- Modal to review previous attempts
+
+## Stack
+
+- React 18
+- Create React App (react-scripts 5)
+
+## Getting Started
+
+```bash
+npm install
+npm start
+```
+
+Open [http://localhost:3000](http://localhost:3000).
+
+## Build
+
+```bash
+npm run build
+```
